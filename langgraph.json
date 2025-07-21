@@ -3,5 +3,4 @@
   "graphs": {
     "agent": "./src/react_agent/graph.py:graph"
   },
-  "env": ".env"
 }
