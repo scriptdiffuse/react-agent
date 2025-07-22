@@ -68,7 +68,12 @@
 
 **Issue Resolution:**
 
-- **Problem:** ValueError('Arg Returns in docstring not found in function signature.')
+- **Problem 1:** ValueError('Arg Returns in docstring not found in function signature.')
 - **Cause:** Used Google-style docstring format with "Args:" and "Returns:" sections
 - **Solution:** Updated docstring to match simpler format used by existing tools
 - **Result:** Error resolved, tool now functions correctly in LangGraph
+
+- **Problem 2:** WikidataQueryRun tool didn't work when deployed on LangGraph platform
+- **Cause:** Missing required dependencies `wikibase-rest-api-client` and `mediawikiapi`
+- **Solution:** Added both dependencies to pyproject.toml as per LangChain documentation
+- **Result:** Tool now works correctly on LangGraph platform deployment
