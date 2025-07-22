@@ -34,12 +34,6 @@ async def wikidata_query(entity: str) -> Optional[str]:
     information about people, places, companies, facts, historical events, or other
     subjects. Input should be the exact name of the item you want information about
     or a Wikidata QID (e.g., 'Q42' for Douglas Adams).
-    
-    Args:
-        entity (str): The exact name of the entity or Wikidata QID to query
-        
-    Returns:
-        Optional[str]: Structured information about the entity from Wikidata
     """
     api_wrapper = WikidataAPIWrapper()
     wikidata_tool = WikidataQueryRun(api_wrapper=api_wrapper)
