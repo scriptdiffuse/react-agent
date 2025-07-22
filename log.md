@@ -77,3 +77,59 @@
 - **Cause:** Missing required dependencies `wikibase-rest-api-client` and `mediawikiapi`
 - **Solution:** Added both dependencies to pyproject.toml as per LangChain documentation
 - **Result:** Tool now works correctly on LangGraph platform deployment
+
+---
+
+### Smithery MCP Toolbox Integration
+
+**Changes Made:**
+
+1. **Updated `pyproject.toml`** - Added `mcpadapt[langchain]>=0.1.11` dependency for MCP server integration
+
+2. **Enhanced `src/react_agent/tools.py`** - Added Smithery MCP toolbox integration:
+
+   - Imported `MCPAdapt` and `LangChainAdapter` from mcpadapt library
+   - Created async `get_smithery_toolbox()` function with proper error handling
+   - Integrated with Smithery's toolbox MCP server for access to 6000+ tools
+   - Added comprehensive authentication using Bearer token
+   - Added tool to TOOLS list for automatic registration
+
+3. **Updated `langgraph.json`** - Added `SMITHERY_API_KEY` to environment variables for platform deployment
+
+**Purpose:**
+
+- Provide access to Smithery's extensive MCP toolbox with 6000+ tools
+- Enable dynamic tool discovery and usage from Smithery's platform
+- Extend agent capabilities across productivity, development, data analysis domains
+- Integrate with modern MCP (Model Context Protocol) ecosystem
+
+**Implementation Details:**
+
+- **Connection URL:** `https://server.smithery.ai/@smithery/toolbox/mcp`
+- **Transport:** Streamable HTTP with Bearer token authentication
+- **Library:** Uses `mcpadapt` for seamless LangChain integration
+- **Error Handling:** Graceful degradation if Smithery API is unavailable
+- **Security:** Requires `SMITHERY_API_KEY` environment variable
+
+**Tool Features:**
+
+- Access to 6000+ specialized tools via single integration
+- Dynamic tool loading from Smithery's MCP server
+- Compatible with LangGraph deployment platform
+- Async implementation for optimal performance
+- Follows MCP standards for interoperability
+
+**Files Modified:**
+
+- `pyproject.toml` - Added mcpadapt[langchain] dependency
+- `src/react_agent/tools.py` - Added get_smithery_toolbox function
+- `langgraph.json` - Added SMITHERY_API_KEY environment variable
+- `log.md` - Updated to track MCP toolbox integration
+
+**Status:** ✅ COMPLETED - Smithery MCP toolbox successfully integrated
+
+**Available Tools:**
+
+1. **search()** - Tavily web search for current events and general information
+2. **wikidata_query()** - Query Wikidata for structured information about entities
+3. **get_smithery_toolbox()** - Access to 6000+ tools via Smithery's MCP toolbox

@@ -19,6 +19,7 @@ dependencies = [
     "langchain-community>=0.3.0",
     "wikibase-rest-api-client<0.2",
     "mediawikiapi>=1.0.6",
+    "mcpadapt[langchain]>=0.1.11",
 ]
 
 
