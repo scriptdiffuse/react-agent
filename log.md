@@ -65,3 +65,10 @@
 - `log.md` - Updated to track tool addition
 
 **Status:** ✅ COMPLETED - WikidataQueryRun tool successfully added to agent and pushed to GitHub
+
+**Issue Resolution:**
+
+- **Problem:** ValueError('Arg Returns in docstring not found in function signature.')
+- **Cause:** Used Google-style docstring format with "Args:" and "Returns:" sections
+- **Solution:** Updated docstring to match simpler format used by existing tools
+- **Result:** Error resolved, tool now functions correctly in LangGraph
