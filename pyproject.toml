@@ -17,6 +17,8 @@ dependencies = [
     "python-dotenv>=1.0.1",
     "langchain-tavily>=0.1",
     "langchain-community>=0.3.0",
+    "wikibase-rest-api-client<0.2",
+    "mediawikiapi>=1.0.6",
 ]
 
 
