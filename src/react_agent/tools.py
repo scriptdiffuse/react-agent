@@ -50,18 +50,18 @@ async def get_smithery_toolbox() -> Optional[List[Any]]:
     This function connects to Smithery's MCP toolbox server which provides 
     access to thousands of tools across various domains including productivity,
     development, data analysis, and more. Requires SMITHERY_API_KEY environment variable.
+    
+    Authentication follows Smithery's query parameter format rather than headers.
     """
     smithery_api_key = os.environ.get('SMITHERY_API_KEY')
     if not smithery_api_key:
         raise ValueError("SMITHERY_API_KEY environment variable is required")
     
-    # Smithery toolbox connection parameters
+    # Smithery toolbox connection with API key as query parameter (Smithery's standard)
+    smithery_url = f"https://server.smithery.ai/@smithery/toolbox/mcp?api_key={smithery_api_key}"
+    
     server_config = {
-        "url": "https://server.smithery.ai/@smithery/toolbox/mcp",
-        "headers": {
-            "Authorization": f"Bearer {smithery_api_key}",
-            "Content-Type": "application/json"
-        }
+        "url": smithery_url
     }
     
     try:

@@ -128,6 +128,14 @@
 
 **Status:** ✅ COMPLETED - Smithery MCP toolbox successfully integrated and pushed to GitHub
 
+**Critical Authentication Fix:**
+
+- **Issue:** Initially used Bearer token in headers approach (incorrect)
+- **Problem:** Smithery uses query parameter authentication, not header-based auth
+- **Solution:** Updated to use `?api_key={key}` query parameter format as per Smithery documentation
+- **URL Format:** `https://server.smithery.ai/@smithery/toolbox/mcp?api_key={SMITHERY_API_KEY}`
+- **Documentation:** Smithery passes configuration via query parameters using dot-notation
+
 **Available Tools:**
 
 1. **search()** - Tavily web search for current events and general information
