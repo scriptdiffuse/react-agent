@@ -72,8 +72,8 @@ mcp_tool_name: str = field(
 )
 
 
-    @classmethod
-    def from_context(cls) -> Configuration:
+@classmethod
+def from_context(cls) -> Configuration:
         """Create a Configuration instance from a RunnableConfig object."""
         try:
             config = get_config()
