@@ -45,14 +45,14 @@ class Configuration:
     mcp_search_query: str = field(
         default="",
         metadata={
-        "description": "The search query for finding MCP servers. This can be keywords, a server name, or a short description of the desired capability."
+            "description": "The search query for finding MCP servers. This can be keywords, a server name, or a short description of the desired capability."
     },
 )
 
     mcp_search_results: int = field(
         default=5,
         metadata={
-        "description": "The maximum number of MCP server search results to return. Default is 3, maximum is 5."
+            "description": "The maximum number of MCP server search results to return. Default is 3, maximum is 5."
     },
 )
 
@@ -60,14 +60,14 @@ class Configuration:
     mcp_server_qualified_name: str = field(
         default="",
         metadata={
-        "description": "The unique qualified name of the MCP server to use, as returned by the search_servers tool."
+            "description": "The unique qualified name of the MCP server to use, as returned by the search_servers tool."
     },
 )
 
     mcp_tool_name: str = field(
         default="",
         metadata={
-        "description": "The name of the tool to call on the selected MCP server."
+            "description": "The name of the tool to call on the selected MCP server."
     },
 )
 
